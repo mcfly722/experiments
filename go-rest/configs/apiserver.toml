@@ -1,5 +1,6 @@
 bind_addr = ":8080"
 log_level = "debug"
+jwt_private_key = "secret"
 
 [store]
 database_url = "postgres://anonymous:anonymous@localhost/restapi_dev?sslmode=disable"
