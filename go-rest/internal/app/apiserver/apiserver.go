@@ -35,13 +35,13 @@ func (s *APIServer) Start() error {
 		return err
 	}
 
-	s.logger.Info("starting API server")
-
 	s.configureRouter()
 
 	if err := s.configureStore(); err != nil {
 		return err
 	}
+
+	s.logger.Info("starting API server at ", s.config.BindAddr)
 
 	return http.ListenAndServe(s.config.BindAddr, s.router)
 }
